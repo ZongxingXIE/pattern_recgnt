@@ -1,4 +1,4 @@
-data = xlsread('/home/zongxing/coursework/pattern_recognition/proj1/Cryotherapy.xlsx');
+data = xlsread('/home/zongxing/coursework/pattern_recognition/proj1/knn_m_chrotherapy/Cryotherapy.xlsx');
 % sex,	age,	Time,	Number_of_Warts,	Type,	Area,	Result_of_Treatment
 % the 7th column is the class
 X = data(:,1:6); %attributes
@@ -27,7 +27,7 @@ data = data_pca;
 % % ==============================
 % divide into trainset and testset
 % 
-test_ratio = 0.2;
+test_ratio = 0.15;
 siz = size(data);
 train_set = data(1:round((1-test_ratio)*siz),:);
 % siz1 = size(train_set)
