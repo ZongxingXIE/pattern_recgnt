@@ -5,15 +5,14 @@ function vote_result = knn_algo(Train, predict, k)
 [row,col] = size(Train);
 
 eucl_dist_class = [];
-% eucl_dist = [];
-% test = test_set(1,1:6);
+
 test = predict(1,1:col-1);
-% diff = train_set(:,1:6)-test;
+
 diff = Train(:,1:col-1) - test;
 for i=1:row
-%      eucl_dist =[eucl_dist; sqrt(sum(diff(i,:).^2))];
+%     
      eucl_dist_class = [eucl_dist_class; sqrt(sum(diff(i,:).^2)),Train(i,col)];
-%     sqrt(sum(diff(i,:).^2.0))
+%     
 end
 
 [~,inx] = sort(eucl_dist_class(:,1));

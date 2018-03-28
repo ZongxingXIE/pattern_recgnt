@@ -1,6 +1,6 @@
 function data_pca = PCA(data, num_feature, threshold)
 
-corr = corrcoef(data)
+corr = corrcoef(data);
 corr_abs = abs(corr(num_feature+1,1:num_feature));
 [~,inx] = sort(corr_abs,'descend');
 inx_pc = [];
